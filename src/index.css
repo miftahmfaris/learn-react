@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.input-text {
+  width: 255px;
+  height: 30px;
+  margin: 0px 5px 5px 0px;
+  margin-right: 5px;
+}
+
+.center {
+  text-align: center;
+}
+
+.input-button {
+  height: 36px;
+}
+
+.output {
+  overflow: auto;
+  border: black solid 1px;
+  width: 302px;
+  height: 300px;
+}
+
+.container {
+  display: flex;
+}
+
+.horizontal-center {
+  justify-content: center;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+
+.list-todo {
+  font-family: monospace;
+  margin: 5px;
+  background: ghostwhite;
+}
