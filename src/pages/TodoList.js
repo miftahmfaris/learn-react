@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Output from "../small/Output";
+import { InputGroup, InputGroupAddon, Input, Button } from "reactstrap";
 
 class TodoList extends Component {
   constructor() {
@@ -42,27 +43,30 @@ class TodoList extends Component {
 
   render() {
     return (
-      <div className="container horizontal-center">
-        <section>
-          <h1 className="center" onDoubleClick={this.editTodo}>
-            Listodo
-          </h1>
-          <input
-            className="input-text"
-            type="text"
-            placeholder="Input Your Text"
-            onChange={this.handleChange}
-            value={this.state.text}
-          />
-          <button className="input-button" onClick={this.handleClick}>
-            Add
-          </button>
-          <Output
-            todos={this.state.todos}
-            deleteTodo={this.deleteTodo}
-            editTodo={this.editTodo}
-          />
-        </section>
+      <div>
+        <div className="container horizontal-center">
+          <section>
+            <h1 className="center">Listodo</h1>
+            <InputGroup className="margin-bottom-10">
+              <Input
+                type="text"
+                placeholder="Input Your Text"
+                onChange={this.handleChange}
+                value={this.state.text}
+              />
+              <InputGroupAddon addonType="append">
+                <Button color="secondary" onClick={this.handleClick}>
+                  Add
+                </Button>
+              </InputGroupAddon>
+            </InputGroup>
+            <Output
+              todos={this.state.todos}
+              deleteTodo={this.deleteTodo}
+              editTodo={this.editTodo}
+            />
+          </section>
+        </div>
       </div>
     );
   }

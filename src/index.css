@@ -4,11 +4,17 @@ body {
   font-family: sans-serif;
 }
 
-.input-text {
-  width: 255px;
-  height: 30px;
-  margin: 0px 5px 5px 0px;
-  margin-right: 5px;
+.link:hover {
+  text-decoration: none;
+  color: #737373;
+}
+
+.link {
+  color: black;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
 }
 
 .center {
@@ -21,9 +27,13 @@ body {
 
 .output {
   overflow: auto;
-  border: black solid 1px;
+  border: #ced4da solid 1px;
   width: 302px;
   height: 300px;
+}
+
+.link {
+  margin: 10px;
 }
 
 .container {
@@ -34,12 +44,20 @@ body {
   justify-content: center;
 }
 
-.justify-between{
+.justify-between {
   justify-content: space-between;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.float-right {
+  float: right;
 }
 
 .list-todo {
   font-family: monospace;
   margin: 5px;
-  background: ghostwhite;
+  background: #f6f6f6;
 }

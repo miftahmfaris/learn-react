@@ -4,8 +4,8 @@ function Output(props) {
   return (
     <div className="output">
       {props.todos.map((todo, index) => (
-        <div className="container justify-between list-todo" key={index}>
-          <div
+        <div className="list-todo" key={index}>
+          <div className="display-inline"
             onDoubleClick={() => {
               props.editTodo(index);
               console.log(index);
@@ -16,13 +16,13 @@ function Output(props) {
           >
             {todo}
           </div>
-          <div
+          <span className="float-right"
             onClick={() => {
               props.deleteTodo(index);
             }}
           >
             X
-          </div>
+          </span>
         </div>
       ))}
     </div>
