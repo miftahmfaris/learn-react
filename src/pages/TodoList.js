@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Output from "../small/Output";
 import { InputGroup, InputGroupAddon, Input, Button } from "reactstrap";
+import axios from "axios";
+
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
 class TodoList extends Component {
   constructor() {
@@ -19,11 +22,20 @@ class TodoList extends Component {
     this.setState({ text: event.target.value });
   }
 
-  handleClick() {
-    this.setState(prevState => ({
-      todos: prevState.todos.concat(prevState.text),
-      text: ""
-    }));
+  async handleClick() {
+    try {
+      if (this.state.text === "") {
+        alert("Input Cannot be Empty");
+      } else {
+        var text = Object.assign(this.state.text)
+        await axios
+          .post(`${API_URL}/todo`, { text: text })
+          .then(res => res);
+        await this.setState({todos: this.state.todos.concat(text)});
+      }
+    } catch (e) {
+      return e;
+    }
   }
 
   deleteTodo(target_index) {
